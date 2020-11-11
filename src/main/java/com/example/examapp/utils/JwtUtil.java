@@ -1,24 +1,23 @@
 package com.example.examapp.utils;
 
-import com.example.examapp.model.Candidate;
-import com.example.examapp.model.Exam;
-import com.example.examapp.repository.CandidateRepository;
-import com.example.examapp.service.CandidateService;
-import com.example.examapp.service.ExamService;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.stereotype.Component;
-
-import java.sql.Struct;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.function.Function;
+
+import com.example.examapp.model.Candidate;
+import com.example.examapp.model.Exam;
+import com.example.examapp.service.CandidateService;
+import com.example.examapp.service.ExamService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
 public class JwtUtil {

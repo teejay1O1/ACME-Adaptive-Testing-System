@@ -1,11 +1,11 @@
 package com.example.examapp.repository;
 
-import com.example.examapp.model.Marks;
-import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.UUID;
+
+import com.example.examapp.model.Marks;
+
+import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MarksRepository{

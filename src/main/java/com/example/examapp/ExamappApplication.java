@@ -1,19 +1,16 @@
 package com.example.examapp;
 
-import com.google.common.base.Predicate;
+import java.util.Collections;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import springfox.documentation.builders.PathSelectors;
+
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
-import java.util.Collections;
-
-import static com.google.common.base.Predicates.or;
 
 @SpringBootApplication
 @EnableSwagger2
@@ -31,13 +28,13 @@ public class ExamappApplication {
                 .apis(RequestHandlerSelectors.basePackage("com.example")).build()
                 .apiInfo(apiDetails());
     }
-    private Predicate<String> selectedPaths() {
-        return or(PathSelectors.ant("/candidates/*"),
-                PathSelectors.ant("/examiners/*"),
-                PathSelectors.ant("/exam/*"),
-                PathSelectors.ant("/question/*"),
-                PathSelectors.ant("/response/*"));
-    }
+    // private Predicate<String> selectedPaths() {
+    //     return or(PathSelectors.ant("/candidates/*"),
+    //             PathSelectors.ant("/examiners/*"),
+    //             PathSelectors.ant("/exam/*"),
+    //             PathSelectors.ant("/question/*"),
+    //             PathSelectors.ant("/response/*"));
+    // }
 
 
     private ApiInfo apiDetails(){

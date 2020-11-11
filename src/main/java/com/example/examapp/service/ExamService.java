@@ -1,16 +1,13 @@
 package com.example.examapp.service;
 
-import com.example.examapp.model.Exam;
-import com.example.examapp.repository.ExamRepository;
-import com.example.examapp.utils.JwtUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.Optional;
 import java.util.UUID;
+
+import com.example.examapp.model.Exam;
+import com.example.examapp.repository.ExamRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ExamService {

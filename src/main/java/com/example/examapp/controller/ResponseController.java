@@ -1,14 +1,20 @@
 package com.example.examapp.controller;
 
-import com.example.examapp.model.Response;
-import com.example.examapp.service.CandidateService;
-import com.example.examapp.service.ExamService;
-import com.example.examapp.service.ResponseService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.UUID;
+
+import com.example.examapp.model.Response;
+import com.example.examapp.service.CandidateService;
+import com.example.examapp.service.ResponseService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/response")

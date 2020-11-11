@@ -1,13 +1,13 @@
 package com.example.examapp.service;
 
-import com.example.examapp.model.Exam;
-import com.example.examapp.model.Examiner;
-import com.example.examapp.repository.ExaminerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 import java.util.UUID;
+
+import com.example.examapp.model.Examiner;
+import com.example.examapp.repository.ExaminerRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ExaminerService {

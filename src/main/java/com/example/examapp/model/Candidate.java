@@ -1,14 +1,14 @@
 package com.example.examapp.model;
 
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Document(collection="Candidate")
@@ -33,7 +33,7 @@ public class Candidate {
         this.password=password;
         this.name=name;
         this.candidateId=UUID.randomUUID();
-        this.exam=exam;
+        // this.exam=exam;
     }
 
 }

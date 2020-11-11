@@ -1,18 +1,15 @@
 package com.example.examapp.service;
 
-import com.example.examapp.model.Candidate;
-import com.example.examapp.model.Exam;
-import com.example.examapp.model.Question;
-import com.example.examapp.model.Response;
-import com.example.examapp.repository.CandidateRepository;
-import com.example.examapp.repository.QuestionRepository;
-import com.example.examapp.repository.ResponseRepository;
-import com.example.examapp.utils.JwtUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 import java.util.UUID;
+
+import com.example.examapp.model.Question;
+import com.example.examapp.model.Response;
+import com.example.examapp.repository.QuestionRepository;
+import com.example.examapp.repository.ResponseRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class QuestionService {

@@ -1,28 +1,32 @@
 package com.example.examapp.controller;
 
+import java.util.UUID;
+
 import com.example.examapp.model.Candidate;
-import com.example.examapp.model.Examiner;
 import com.example.examapp.service.CandidateService;
-import com.example.examapp.service.ExaminerService;
 import com.example.examapp.utils.JwtUtil;
-import io.swagger.annotations.ApiOperation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(value= "/candidates")
 public class CandidateController {
 
     private CandidateService candidateService;
-    private JwtUtil jwtUtil;
-
+    
     @Autowired
-    CandidateController(CandidateService candidateService,JwtUtil jwtUtil) {
-        this.candidateService= candidateService;
-        this.jwtUtil=jwtUtil;
+    CandidateController(CandidateService candidateService, JwtUtil jwtUtil) {
+        this.candidateService = candidateService;
     }
 
     @PostMapping(value = "/create")

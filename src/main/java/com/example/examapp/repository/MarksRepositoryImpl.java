@@ -1,15 +1,15 @@
 package com.example.examapp.repository;
 
+import java.util.List;
+import java.util.UUID;
+
 import com.example.examapp.model.Marks;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
-import org.yaml.snakeyaml.error.Mark;
-
-import java.util.List;
-import java.util.UUID;
 
 @Repository
 public class MarksRepositoryImpl implements MarksRepository{
