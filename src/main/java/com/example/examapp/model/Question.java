@@ -41,7 +41,6 @@ public class Question {
     }
 
     public Question(String questionString, List<String> options, int correctOption) {
-
         this.questionString = questionString;
         this.options = options;
         this.correctOption = correctOption;

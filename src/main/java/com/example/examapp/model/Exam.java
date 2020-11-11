@@ -21,18 +21,21 @@ public class Exam {
     @JsonProperty("examinerID")
     private UUID examinerID;
     @JsonProperty("firstQuestion")
-    private UUID firstQuestion;     //assume every exam has atleast 1 question
-    @JsonProperty("students")
-    private List<UUID> students;
+    private UUID firstQuestion;//assume every exam has atleast 1 question
+    @JsonProperty("examDurationMins")
+            private int examDurationMins;
+//    @JsonProperty("students")
+//    private List<UUID> students;
 
     Exam(){
         this.examID=UUID.randomUUID();
-        this.students = new ArrayList<UUID>();
+//        this.students = new ArrayList<UUID>();
     }
 
-    Exam(String examName){
+    Exam(String examName,int examDurationMins){
         this.examName=examName;
         this.examID= UUID.randomUUID();
+        this.examDurationMins=examDurationMins;
     }
 
 }

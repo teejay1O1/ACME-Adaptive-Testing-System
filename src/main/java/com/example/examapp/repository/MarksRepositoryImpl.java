@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 import org.yaml.snakeyaml.error.Mark;
 
+import java.util.List;
 import java.util.UUID;
 
 @Repository
@@ -34,6 +35,14 @@ public class MarksRepositoryImpl implements MarksRepository{
         return marks;
     }
 
+
+    @Override
+    public List<Marks> findAllByExamId(UUID examId) {
+        Query getMarksByExamQuery = new Query();
+        getMarksByExamQuery.addCriteria(Criteria.where("examId").is(examId));
+        return mongoTemplate.find(getMarksByExamQuery,Marks.class);
+
+    }
 
     @Override
     public void deleteMarks(UUID candidateId, UUID examId) {

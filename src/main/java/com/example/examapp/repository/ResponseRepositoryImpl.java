@@ -22,15 +22,22 @@ public class ResponseRepositoryImpl implements ResponseRepository{
 
     @Override
     public Response saveResponse(Response response) {
-        mongoTemplate.save(response);
-        return response;
+        return mongoTemplate.save(response);
     }
 
+    @Override
     public Response getResponse(UUID examId, UUID candidateId, UUID quesId){
         Query uniqueResponseQuery = new Query();
         uniqueResponseQuery.addCriteria(Criteria.where("candidateId").is(candidateId).and("examId").is(examId).and("questionId").is((quesId)));
         return mongoTemplate.findOne(uniqueResponseQuery, Response.class);
 
+    }
+
+    @Override
+    public List<Response> getResponses(UUID examId,UUID candidateId){
+        Query allResponsesQuery = new Query();
+        allResponsesQuery.addCriteria(Criteria.where("candidateId").is(candidateId).and("examId").is(examId));
+        return mongoTemplate.find(allResponsesQuery,Response.class);
     }
 
 }

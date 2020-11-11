@@ -10,5 +10,5 @@ import java.util.UUID;
 public interface ResponseRepository {
     public Response saveResponse(Response response);
     public Response getResponse(UUID examId, UUID candidateId, UUID quesId);
-//    public List<Response> getResponesByStudentForExam(UUID examId,UUID candidateId );
+    public List<Response> getResponses(UUID examId,UUID candidateId );
 }

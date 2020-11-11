@@ -18,13 +18,16 @@ public class Examiner {
     private UUID id;
     @JsonProperty("userName")
     private String userName;
-    private List<Exam> exams;
+    @JsonProperty("exams")
+    private List<UUID> exams;
 
     public Examiner(){
         this.id=UUID.randomUUID();
-        this.exams= new ArrayList<Exam>();
+        this.exams= new ArrayList<UUID>();
     }
+
     public Examiner(String userName) {
+        this.exams= new ArrayList<UUID>();
         this.id = UUID.randomUUID();
         this.userName = userName;
     }

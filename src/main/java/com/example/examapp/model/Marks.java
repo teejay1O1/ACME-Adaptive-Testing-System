@@ -14,6 +14,4 @@ public class Marks {
     private UUID examId;
     private int score;
 
-
-
 }

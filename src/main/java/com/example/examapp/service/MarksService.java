@@ -5,6 +5,7 @@ import com.example.examapp.repository.MarksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -30,12 +31,17 @@ public class MarksService {
     //update
     public void updateMarks(UUID candidateId, UUID examId,int marksChange){
         Marks marks=getMarks(candidateId, examId);
-        marks.setScore(marks.getScore()+ marksChange);
+        marks.setScore(marks.getScore() + marksChange);
         marksRepository.saveMarks(marks);
     }
+
 
     //delete
     public void deleteMarks(UUID candidateId, UUID examId){
         marksRepository.deleteMarks(candidateId,examId);
+    }
+
+    public List<Marks> getMarksForExam(UUID examId) {
+        return marksRepository.findAllByExamId(examId);
     }
 }

@@ -12,9 +12,9 @@ import java.util.UUID;
 @RequestMapping(value= "/examiners")
 public class ExaminerController {
 
-    @Autowired
     private ExaminerService examinerService;
 
+    @Autowired
     ExaminerController(ExaminerService examinerService) {
         this.examinerService = examinerService;
     }
@@ -28,9 +28,14 @@ public class ExaminerController {
     }
 
     @GetMapping(value = "/{id}")
-    public Examiner getbyId(@PathVariable UUID id) {
-        System.out.println(id);
-        return examinerService.getByExaminerId(id);
+    public Examiner getbyId(@PathVariable UUID examinerId) {
+//        System.out.println(id);
+        return examinerService.getByExaminerId(examinerId);
+    }
+
+    @PutMapping(value = "addExam/{examinerId}")
+    public Examiner addExamToExaminer(@PathVariable UUID examinerId,@RequestBody UUID examId){
+        return examinerService.addExamToExaminer(examinerId,examId);
     }
 
 }

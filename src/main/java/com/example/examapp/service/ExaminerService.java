@@ -1,5 +1,6 @@
 package com.example.examapp.service;
 
+import com.example.examapp.model.Exam;
 import com.example.examapp.model.Examiner;
 import com.example.examapp.repository.ExaminerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,11 @@ public class ExaminerService {
     }
 
     //update
-    // not required
+    public Examiner addExamToExaminer(UUID examinerId, UUID examId){
+        Examiner examiner=getByExaminerId(examinerId);
+        examiner.getExams().add(examId);
+        return examinerRepository.save(examiner);
+    }
 
     //delete
     public void deleteById(UUID id){
